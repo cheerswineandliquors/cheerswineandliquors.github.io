@@ -1,5 +1,5 @@
 .accordionMain {
-    background-color: #eee;
+    background-color: #c4bebe;
     color: #444;
     cursor: pointer;
     padding: 18px;
@@ -12,11 +12,11 @@
 	position: relative;
 }
 .accordionSec {
-    background-color: #eee;
+    background-color: #c4bebe;
     color: #444;
     cursor: pointer;
     padding: 18px;
-    width: 50%;
+    width: 70%;
     border: none;
     text-align: left;
     outline: none;
@@ -30,7 +30,7 @@
 
 .accordionMain:after { 
     content: '\002B';
-    color: #777;
+    color: #444;
     font-weight: bold;
     float: right;
     margin-left: 5px;
@@ -43,7 +43,7 @@
 
 .accordionSec:after { 
     content: '\002B';
-    color: #777;
+    color: #444;
     font-weight: bold;
     float: right;
     margin-left: 5px;
@@ -66,13 +66,14 @@ p.list {
 }
 .rightcolumn {
     float: right;
-    width: 35%;
-    background-color: #f1f1f1;
+    width: 45%;
+    background-color: #c4bebe;
     padding-left: 20px;
 }
 .leftcolumn {   
     float: left;
-    width: 60%;
+    background-color: #c4bebe;
+    width: 50%;
 }
 .centerright {
     display: block;

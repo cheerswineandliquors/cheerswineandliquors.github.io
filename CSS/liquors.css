@@ -35,14 +35,14 @@ a.active {
 .rightindexcolumn {
     float: right;
     width: 45%;
-    background-color: #f1f1f1;
+    background-color: #c4bebe;
     padding-left: 20px;
     display: inline-block;
 }
 .leftindexcolumn {   
     float: left;
     width: 45%;
-    background-color: #f1f1f1;
+    background-color: #c4bebe;
     display: inline-block;
 }
 .center {
