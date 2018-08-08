@@ -3,7 +3,7 @@
     color: #444;
     cursor: pointer;
     padding: 18px;
-    width: 90%;
+    width: 95%;
     border: none;
     text-align: left;
     outline: none;
@@ -16,13 +16,17 @@
     color: #444;
     cursor: pointer;
     padding: 18px;
-    width: 70%;
+    width: 90%;
     border: none;
     text-align: left;
     outline: none;
     font-size: 15px;
     transition: 0.4s;
-	position: relative;
+    position: relative;
+    text-align: center;
+    display: auto;
+    margin: auto;
+    padding-right: 28px;
 }
 .selactive, .accordionMain:hover {
     background-color: #ccc;
@@ -34,6 +38,7 @@
     font-weight: bold;
     float: right;
     margin-left: 5px;
+    text-align: center;
 	
 }
 
@@ -47,6 +52,10 @@
     font-weight: bold;
     float: right;
     margin-left: 5px;
+    text-align: center;
+    display: auto;
+    margin: auto;
+    padding-right: 28px;
 }
 .selactive:after {
     content: "\2212";
@@ -65,19 +74,60 @@ p.list {
 	color:DodgerBlue;
 }
 .rightcolumn {
-    float: right;
-    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
     background-color: #c4bebe;
-    padding-left: 20px;
+    
 }
 .leftcolumn {   
-    float: left;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #c4bebe;
-    width: 50%;
+    width: 100%;
 }
 .centerright {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 100%;
+}
+
+@media (min-width: 35.75em) {
+    .rightcolumn {
+        float: right;
+        width: 45%;
+        background-color: #c4bebe;
+        padding-left: 20px;
+    }
+    .leftcolumn {   
+        float: left;
+        background-color: #c4bebe;
+        width: 50%;
+    }
+    .centerright {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    .accordionSec:after { 
+        content: '\002B';
+        color: #444;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+    .accordionSec {
+        background-color: #c4bebe;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 70%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+        position: relative;
 }

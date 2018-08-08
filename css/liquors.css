@@ -25,31 +25,42 @@ a.active {
     padding: 1px;
     text-align: center;
     font-size: 35px;
+    height: 4em;
 }
 
+.emailName {
+    padding: 1px;
+    text-align: center;
+    font-size: 15px;
+    height: 4em;
+}
 .directions {
     padding: 1px;
     text-align: center;
-    font-size: 25px;
+    font-size: 10px;
+    background-color: #c4bebe;
 }
 .rightindexcolumn {
-    float: right;
-    width: 45%;
+   
+    width: 90%;
     background-color: #c4bebe;
-    padding-left: 20px;
-    display: inline-block;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .leftindexcolumn {   
-    float: left;
-    width: 45%;
+    
+    width: 90%;
     background-color: #c4bebe;
-    display: inline-block;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 75%;
 }
 
 .sidenav a {
@@ -87,7 +98,151 @@ a.active {
   .sidenav a {font-size: 18px;}
 }
 
+@media screen and (min-width: 28.75em) {
+    .related-products li {
+      width: 33.3333333%;
+    }
+  }
 
+  @media screen and (min-width: 40.5em) {
+    .related-products li {
+      width: 16.6666667%;
+    }
+  }
+
+
+
+/* Mobile Font sizes */
+
+h1 {
+    font-size: 1.75em;
+    
+    line-height: 1.15384615;
+  
+  }
+h2 {
+    font-size: 1.5em;
+   
+    line-height: 1.15384615;
+  
+  }
+h3 {
+    font-size: 1.375em;
+   
+    line-height: 1.13636364;
+  
+  }  
+  h5 {
+    font-size: 1em;
+   
+    line-height: 1;
+
+    font-weight: bold;
+
+    
+   
+    text-align: center;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    margin-top: 1.2em;
+    margin-bottom: 1em;
+  }  
+  @media (min-width: 35.75em) {
+    h1 {
+        font-size: 2em;
+        
+        line-height: 1.15384615;
+        
+      }
+    h2 {
+      font-size: 1.75em;
+     
+      line-height: 1.25;
+    }
+    h3 {
+        font-size: 1.5em;
+        /* 1.5x body copy size = 24px */
+        line-height: 1.25;
+      }
+      nav.li a {
+        text-align: center;
+        float: none;
+    }
+  
+  h5 {
+    font-size: 1.375em;
+ 
+    line-height: 1.13636364;
+  
+  }  
+  .header {
+    max-height: 100%;
+  }
+  .emailName {
+    font-size: 1.25em;
+    
+    line-height: 1.25;
+  }
+}
+  @media (min-width: 43.25em) {
+    h1 {
+        font-size: 2.5em;
+        /* 1.625x body copy size = 26px */
+        line-height: 1.15384615;
+        /* 30px / 26px */
+      }
+    h2 {
+      font-size: 2em;
+      /* 2.25x body copy size = 36px */
+      line-height: 1.25;
+    }
+    h3 {
+        font-size: 1.5em;
+        /* 1.75x body copy size = 28px */
+        line-height: 1.25;
+      }
+    h5 {
+        font-size: 1.5em;
+        
+        line-height: 1.13636364;
+        
+      }  
+      nav.ul {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    nav.li a {
+        float: left;
+        padding: 15px;
+    }
+
+    div.content {margin-left: 0;}
+
+    .rightindexcolumn {
+        float: right;
+        width: 45%;
+        background-color: #c4bebe;
+        padding-left: 2px;
+        display: inline-block;
+    }
+    .leftindexcolumn {   
+        float: left;
+        width: 45%;
+        background-color: #c4bebe;
+        display: inline-block;
+    }
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 75%;
+    }
+}
+  
+
+
+  
 
 /* Google Maps Styling */
       #map {
