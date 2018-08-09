@@ -5,7 +5,23 @@
     padding: 18px;
     width: 95%;
     border: none;
-    text-align: left;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+	position: relative;
+}
+.accordionNull {
+    background-color: #c4bebe;
+    color: #444;
+    cursor: pointer;
+    padding-right: 18px;
+    padding-bottom: 18px;
+    padding-top: 18px;
+    padding-left: 18px;
+    width: 90%;
+    border: none;
+    text-align: center;
     outline: none;
     font-size: 15px;
     transition: 0.4s;
@@ -18,7 +34,7 @@
     padding: 18px;
     width: 90%;
     border: none;
-    text-align: left;
+    
     outline: none;
     font-size: 15px;
     transition: 0.4s;
@@ -71,7 +87,9 @@
 p.list {
 	font-weight: bold;
 	font-size: 150%;
-	color:DodgerBlue;
+    color:DodgerBlue;
+    text-align: center;
+    padding-right: 28px;
 }
 .rightcolumn {
     margin-left: auto;
@@ -118,6 +136,9 @@ p.list {
         float: right;
         margin-left: 5px;
     }
+    .accordionMain {
+        text-align: left;
+    }
     .accordionSec {
         background-color: #c4bebe;
         color: #444;
@@ -130,4 +151,27 @@ p.list {
         font-size: 15px;
         transition: 0.4s;
         position: relative;
+    }
+    .accordionNull {
+        background-color: #c4bebe;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 70%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+        position: relative;
+        padding-right: 18px;
+        padding-bottom: 18px;
+        padding-top: 18px;
+        padding-left: 18px;
+    }
+    p.list {
+
+        text-align: left;
+        padding-right: 0px;
+    }
 }
