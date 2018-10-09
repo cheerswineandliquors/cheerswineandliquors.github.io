@@ -19,7 +19,7 @@
     padding-bottom: 18px;
     padding-top: 18px;
     padding-left: 18px;
-    width: 90%;
+    width: 94%;
     border: none;
     text-align: center;
     outline: none;
@@ -32,7 +32,7 @@
     color: #444;
     cursor: pointer;
     padding: 18px;
-    width: 90%;
+    width: 93%;
     border: none;
     outline: none;
     outline: none;
@@ -48,7 +48,7 @@
     background-color: #ccc;
 }
 
-.accordionMain:after { 
+.accordionMain::after { 
     content: '\002B';
     color: #444;
     font-weight: bold;
@@ -62,7 +62,7 @@
     background-color: #ccc;
 }
 
-.accordionSec:after { 
+.accordionSec::after { 
     content: '\002B';
     color: #444;
     font-weight: bold;
@@ -73,8 +73,23 @@
     margin: auto;
     padding-right: 28px;
 }
-.selactive:after {
+.selactive::after {
     content: "\2212";
+}
+.selactive, .accordionNull:hover {
+    background-color: #ccc;
+}
+
+.accordionNull::after { 
+    content: '\002B';
+    color: #444;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    text-align: center;
+    display: auto;
+    margin: auto;
+    padding-right: 28px;
 }
 
 .panel {
@@ -97,6 +112,7 @@ p.list {
     padding-right: 28px;
     padding-left: 35px;
     background-color: #c4bebe;
+    width: 75%;
 }
 div.list {
     display: block;
@@ -131,7 +147,8 @@ div.list {
     margin-right: auto;
     width: 100%;
 }
-
+.cabSauv{
+font-size: 13px;}
 @media (min-width: 35.75em) {
     .rightcolumn {
         float: right;
@@ -151,7 +168,7 @@ div.list {
         width: 50%;
     }
     .accordionSec:after { 
-        content: '\002B';
+       
         color: #444;
         font-weight: bold;
         float: right;
@@ -160,6 +177,8 @@ div.list {
     .accordionMain {
         text-align: left;
     }
+    .cabSauv{
+        font-size: 15px;}
     .accordionSec {
         background-color: #c4bebe;
         color: #444;
@@ -174,15 +193,16 @@ div.list {
         position: relative;
     }
     .accordionNull {
+        color: #7180c4;
         background-color: #c4bebe;
-        color: #444;
+        
         cursor: pointer;
         padding: 18px;
         width: 70%;
         border: none;
         text-align: left;
         outline: none;
-        font-size: 15px;
+        font-size: 18px;
         transition: 0.4s;
         position: relative;
         padding-right: 18px;
@@ -196,4 +216,10 @@ div.list {
         padding-right: 0px;
         background-color: #c4bebe;
     }
+    .selactive::after {
+        content: "\2212";
+    }
+}
+.selactive::after {
+    content: "\2212";
 }
