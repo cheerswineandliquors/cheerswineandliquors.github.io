@@ -1,6 +1,6 @@
 
 * {box-sizing: border-box;}
-ul {list-style-type: none;height: 60px;}
+ul {list-style-type: none;}
 body {font-family: Verdana, sans-serif;}
 
 .month {
@@ -11,6 +11,7 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .month ul {
+  
   margin: 0;
   padding: 0;
 }
@@ -43,6 +44,7 @@ body {font-family: Verdana, sans-serif;}
   width: 13.6%;
   color: #666;
   text-align: center;
+  height: 30px;
 }
 
 .days {
@@ -57,7 +59,7 @@ body {font-family: Verdana, sans-serif;}
   width: 13.6%;
   text-align: center;
   margin-bottom: 10px;
-  
+  height: 30px;
   color: rgb(233, 225, 225);
 }
 
