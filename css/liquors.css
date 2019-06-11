@@ -16,6 +16,22 @@ body {
 
 }
 
+
+#mainPage_link a:link { color:#ba00e0  }
+#mainPage_link a:visited { color:#ba00e0 }
+#mainPage_link a:hover { color:#ffffff; }
+#mainPage_link a:active { color:#ba00e0 }
+#mainPage_link2 a:link { color:#ba00e0  }
+#mainPage_link2 a:visited { color:#ba00e0 }
+#mainPage_link2 a:hover { color:#ffffff; }
+#mainPage_link2 a:active { color:#ba00e0 }
+
+
+#mainCalendar_link a:link { color:#7180c4  }
+#mainCalendar_link a:visited { color:#7180c4 }
+#mainCalendar_link a:hover { color:#ffffff; }
+#mainCalendar_link a:active { color:#7180c4 }
+
 .sidenav {
     height: 100%;
     width: 0;
