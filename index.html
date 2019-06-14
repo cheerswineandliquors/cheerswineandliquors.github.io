@@ -9,8 +9,10 @@
 <meta property="og:description"   content="Best Liquor Store in Farmville" />
 <meta property="og:image"         content="http://www.cheerswineandliquorsny.com/img/ciroc.jpg" />
 <link rel="stylesheet" type="text/css" href="./css/liquors.css">
+<link rel="stylesheet" type="text/css" href="./css/slideshow.css">
 <script src="./js/liquors.js"></script>
-<script src="./js/snow.js"></script>
+<!--<script src="./js/snow.js"></script>-->
+<script src="./js/slideshow.js"></script>
 </head>
 <body style=" background-image: url('img/background1.jpg');">
 		<div id="fb-root"></div>
@@ -45,48 +47,116 @@
   <h5>Cheers Wine and Liquors</h5>
 </div>
   <div class="centerindexcolumn" >
-  <h3 class="center"> Visit us in Farmingville for all your wine and liquor needs! </h3>
-  <h3 class="center"> Stop by at 2340 N. Ocean Ave Farmingville, NY 11738</h3>
+
   <h3 class="center" style = "color:#ba00e0 " id= "mainPage_link"> JOIN <a  href="wineloyalty.html">WINE LOYALTY PROGRAM</a> TO EARN REWARDS!! </h3>
   <h3 class="center"style = "color:#ba00e0 " id= "mainPage_link2">Click <a  href="wineloyalty.html">here</a> for details!</h3>
-  <h3 class="center"style = "color:#7180c4" id= "mainCalendar_link"> View our <a  href="calendar.html">Tasting Calendar</a> page for <a id="monthId"></a>'s Tastings!  </h3>
   <!--<div style="position: relative; margin: 0 auto;" class="center" width="40%" height="35%">-->
 </div>
 
 <br>
-
+<script>
+		monthUpdate();
+		</script>
 <div class="leftindexcolumn">
 
 	
 	<!--<canvas  id="snowCanvas" style="position:absolute;top:0;left:0; width: 100%; height: 100%;"width=300px height=300px>
 	
 	</canvas>-->
-	
+	<h3 class="center"> Visit us in Farmingville for all your wine and liquor needs! </h3>
+	<h3 class="center"style = "color:#7180c4" id= "mainCalendar_link"> View our <a  href="calendar.html">Tasting Calendar</a> page for <a id="monthId"></a>'s Tastings!  </h3>
+	<h3 class="center"> Stop by at 2340 N. Ocean Ave Farmingville, NY 11738</h3>
+	<h3 class="center"> Our Hours: </h3>
+	<h3 class="centerdate"> Monday 9:30 AM - 8 PM </h3>
+	<h3 class="centerdate"> Tuesday 9:30 AM - 8 PM </h3>
+	<h3 class="centerdate"> Wednesday 9:30 AM - 8 PM </h3>
+	<h3 class="centerdate"> Thursday 9:30 AM - 8 PM </h3>
+	<h3 class="centerdate"> Friday 9:30 AM - 8 PM </h3>
+	<h3 class="centerdate"> Saturday 9:30 AM - 8 PM </h3>
+	<h3 class="centerdate"> Sunday 12 Noon - 5 PM </h3>
 	
 	<h2 class="center"> Look at our newest additions! </h2>
-	<h3 class="center"> Black Raspberry Ciroc</h3><br>
-	<img src="img\june19update1.jpg" alt="Black Raspberry Ciroc" class="center"  width="50%" height="50%">
+	<div class= "slideshow-container">
+		<div class="mySlides1 fade">
+			<div class="numbertext">1 / 3</div>
+				<img src="img\june19update1.jpg" alt="Black Raspberry Ciroc" class="center"  width="50%" height="50%">
+				<div class="slideshowtext">Black Raspberry Ciroc</div>
+			</div>
+			  
+			<div class="mySlides1 fade">
+				<div class="numbertext">2 / 3</div>
+				<img src="img\june19update5.jpg" alt="High Noon Vodka & Soda" class="center"  width="50%" height="50%">
+				<div class="slideshowtext">High Noon Vodka & Soda</div>
+			</div>
+			  
+			<div class="mySlides1 fade">
+				<div class="numbertext">3 / 3</div>
+				<img src="img\june19update2.jpg" alt="Skinny Freezer Martini" class="center"  width="50%" height="50%">
+				<div class="slideshowtext">Skinny Freezer Martini</div>
+			</div>
+			  
+		</div>
+	</div>
+	<!--<div style="text-align:center">
+			<span class="dot"></span> 
+			<span class="dot"></span> 
+			<span class="dot"></span> 
+	</div>-->
 
-	<h3 class="center">New wines!</h3><br>
-	<img src="img\june19update6.jpg" alt="New wines!" class="center"  width="50%" height="50%">
-	<img src="img\june19update7.jpg" alt="New wines!" class="center"  width="50%" height="50%">
-	<h3 class="center"> High Noon Vodka & Soda</h3><br>
-	<img src="img\june19update5.jpg" alt="High Noon Vodka & Soda" class="center"  width="50%" height="50%">
+
 
 </div>
 
 
 <div class="rightindexcolumn">
+		<h3 class="center">New wines!</h3><br>
+		<div class= "slideshow-container">
+			<div class="mySlides3 fade">
+				<div class="numbertext">1 / 2</div>
+				<img src="img\june19update6.jpg" alt="New wines!" class="center"  width="50%" height="50%">
+			</div>
+				  
+			<div class="mySlides3 fade">
+				<div class="numbertext">2 / 2</div>
+				<img src="img\june19update7.jpg" alt="New wines!" class="center"  width="50%" height="50%">
+			</div>
+			<div class="mySlides3 fade">
+					<div class="numbertext">2 / 2</div>
+					<img src="img\june19update7.jpg" alt="New wines!" class="center"  width="50%" height="50%">
+			</div>
+				  
+		</div>
 
-	<h2 class="center"> Look at our newest additions!</h2>
-	<h3 class="center">Skinny Freezer Martini</h3><br>
-	<img src="img\june19update2.jpg" alt="Skinny Freezer Martini" class="center"  width="50%" height="50%">
-	<h3 class="center"> Four Roses</h3><br>
-	<img src="img\june19update3.jpg" alt="Four Roses" class="center"  width="50%" height="50%">
-	<h3 class="center">Elmer T Lee</h3><br>
-	<img src="img\june19update8.jpg" alt="New wines!" class="center"  width="50%" height="50%">
-	<h3 class="center"> Smirnoff Infusions</h3><br>
-	<img src="img\june19update4.jpg" alt="Smirnoff Infusions" class="center"  width="50%" height="50%">
+		<h2 class="center"> Look at our newest additions!</h2>
+		<div class= "slideshow-container">
+				<div class="mySlides2 fade">
+					<div class="numbertext">1 / 3</div>
+						<img src="img\june19update3.jpg" alt="Four Roses" class="center"  width="50%" height="50%">
+						<div class="slideshowtext">Four Roses</div>
+				</div>
+					  
+				<div class="mySlides2 fade">
+						<div class="numbertext">2 / 3</div>
+						<img src="img\june19update8.jpg" alt="Elmer T Lee" class="center"  width="50%" height="50%">
+						<div class="slideshowtext">Elmer T Lee</div>
+				</div>
+					  
+				<div class="mySlides2 fade">
+						<div class="numbertext">3 / 3</div>
+						<img src="img\june19update4.jpg" alt="Smirnoff Infusions" class="center"  width="50%" height="50%">
+						<div class="slideshowtext">Smirnoff Infusions</div>
+				</div>
+					  
+		</div>
+			
+		<!--<div style="text-align:center">
+					<span class="dot"></span> 
+					<span class="dot"></span> 
+					<span class="dot"></span> 
+		</div>-->
+
+
+
 
 
 
@@ -109,7 +179,11 @@
   
 </div>    
 <script>
-monthUpdate()
+	monthUpdate();
+var slideIndex = 0;
+showSlides1();
+
+
 </script>
 </body>
 </html> 
