@@ -109,6 +109,12 @@ a.active {
     margin-right: auto;
     width: 75%;
 }
+.centerlist {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
 .centerdate {
   display: block;
   margin-left: auto;
