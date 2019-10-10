@@ -109,6 +109,13 @@ a.active {
     margin-right: auto;
     width: 75%;
 }
+.centerSales {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 50%;
+}
 span.even{
   color: rgba(255, 94, 0, 0.733);
   word-spacing: 3px;
