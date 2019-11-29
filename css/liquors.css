@@ -118,13 +118,13 @@ a.active {
 }
 
 span.even{
-  color: rgba(255, 94, 0, 0.733);
+  color: rgba(255, 0, 0, 0.801);
   word-spacing: 3px;
 }
 
 span.odd{
   word-spacing: 3px;
-  color: #9e8705;
+  color: #059e05;
 }
 .centerlist {
   display: block;
