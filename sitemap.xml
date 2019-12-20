@@ -9,35 +9,237 @@
 
 <url>
   <loc>http://cheerswineandliquorsny.com/</loc>
-  <lastmod>2018-12-05T01:37:44+00:00</lastmod>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://cheerswineandliquorsny.com/selection.html</loc>
-  <lastmod>2018-12-05T01:37:44+00:00</lastmod>
-  <priority>0.80</priority>
-</url><url>
-  <loc>http://cheerswineandliquorsny.com/calendar.html</loc>
-  <lastmod>2018-12-05T01:37:44+00:00</lastmod>
-  <priority>0.80</priority>
-</url><url>
-  <loc>http://cheerswineandliquorsny.com/wineloyalty.html</loc>
-  <lastmod>2018-12-05T01:37:44+00:00</lastmod>
+  <loc>http://cheerswineandliquorsny.com/wine/red/redwine.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://cheerswineandliquorsny.com/location.html</loc>
-  <lastmod>2018-12-05T01:37:44+00:00</lastmod>
+  <loc>http://cheerswineandliquorsny.com/wine/red/merlot.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/wine/red/shiraz.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/wine/red/cabsauv.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/wine/red/pinotnoir.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/wine/red/malbec.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/wine/red/zinfandel.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/wine/red/chianti.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/wine/red/blends.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/wine/white/whitewine.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/wine/white/sauvblanc.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/wine/white/moscato.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/wine/white/chardd.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/wine/white/pinotgrig.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/wine/white/riesling.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/wine/rosewine.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/wine/liwine.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/rum/rum.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/rum/morgan.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/rum/bacardi.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/rum/rumothers.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/vodka/vodka.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/vodka/smirnoff.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/vodka/ciroc.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/vodka/vodkaothers.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/whiskey/whiskeymain.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/whiskey/whiskey.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/whiskey/bourbon.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/whiskey/rye.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/scotch/scotchmain.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/scotch/scotch.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/scotch/brandy.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/scotch/cogniac.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/gintec/gintec.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/gintec/gin.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/gintec/tequila.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/cordials/cordials.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/cordials/fruity.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/cordials/coffee.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/liquor/cordials/cordialsothers.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/sales.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/calendar.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/wineloyalty.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://cheerswineandliquorsny.com/contact.html</loc>
-  <lastmod>2018-12-05T01:37:44+00:00</lastmod>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://cheerswineandliquorsny.com/location.html</loc>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://cheerswineandliquorsny.com/index.html</loc>
-  <lastmod>2018-12-05T01:37:44+00:00</lastmod>
+  <lastmod>2019-12-20T04:24:37+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
