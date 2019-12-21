@@ -27,7 +27,7 @@ body {
     display: inline-block;
     color: rgb(0, 0, 0);
     text-align: center;
-    
+    cursor:pointer;
     text-decoration: none;
   }
   
@@ -60,11 +60,13 @@ body {
 
   
   .dropdown-content a:hover {background-color: #f1f1f1;}
-  
+ /*  
   .dropdown:hover .dropdown-content {
     display: block;
   }
+*/
 
+.show{display: block;}
 /* Create three equal columns that floats next to each other */
 .dropdownColumn3 {
   float: left;

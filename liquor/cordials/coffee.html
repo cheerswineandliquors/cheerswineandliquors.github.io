@@ -12,7 +12,8 @@
 <link rel="stylesheet" type="text/css" href="./../../css/liquorsMain.css">
 <link rel="stylesheet" type="text/css" href="./../../css/slideshowNew.css">
 <script src="./../../js/slideshowNew.js"></script>
-<script src="./../..//js/dater.js"></script>
+<script src="./../../js/dater.js"></script>
+<script src="./../../js/selection.js"></script>
 <link rel="stylesheet" href="./../../css/w3.css">
 
 </head>
@@ -41,7 +42,7 @@
 							
 						</li>
 						<li class ="dropdown" id= "Wine">
-							<span class = "dropbtn">Wine</span>
+							<span class = "dropbtn" onclick="selector(0)">Wine</span>
 							<div class="dropdown-content">
 								<div class="dropdownHeader">
 									<h2>Wine</h2>
@@ -78,7 +79,7 @@
 							</div>
 						</li>
 						<li class ="dropdown" id= "Liquors">
-								<span class = "dropbtn active">Liquors</span>
+								<span class = "dropbtn active" onclick="selector(1)">Liquors</span>
 								<div class="dropdown-content">
 									<div class="dropdownHeader">
 										<h2>Liquors</h2>
@@ -137,7 +138,7 @@
 	
 							</li>
 						<li class = "dropdown" id="About Us">
-							<span class = "dropbtn">About Us</span>
+							<span class = "dropbtn" onclick="selector(2)">About Us</span>
 							<div class="dropdown-content">
 								<a href="./../../contact.html">Contact Us</a>
 								<a href="./../../location.html">Our Location</a>
