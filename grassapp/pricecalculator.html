@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<!--version Beta 20-->
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+		<title> Price Calculator </title>
+		<style>
+			div.hidden {
+    				display: none;
+			}
+			.clearfix {
+				overflow: auto;
+			}
+
+			.leftPane {
+				float: left;
+				width: 30%;
+				border-right: 1px solid black;
+				display: block;
+			}
+
+			.rightPane {
+				display: inline-block;
+				float: right;
+				width: 65%;
+
+			}
+			.grassApp {
+				max-width: 500px;
+				display: block;
+			}
+			.debrisApp {
+				max-width: 500px;
+				display: none;
+			}
+			.boardingApp {
+				max-width: 500px;
+				display: none;
+			}
+			.wintApp {
+				max-width: 500px;
+				display: none;
+			}
+			.secureApp {
+				max-width: 500px;
+				display: none;
+			}
+			.cleanApp {
+				max-width: 500px;
+				display: none;
+			}
+			.utilApp {
+				max-width: 500px;
+				display: none;
+			}
+			.poolApp {
+				max-width: 500px;
+				display: none;
+			}
+			.waterApp {
+				max-width: 500px;
+				display: none;
+			}
+			.optionApp {
+				max-width: 500px;
+				display: none;
+			}
+			.aboutApp {
+				max-width: 500px;
+				display: none;
+			}
+			.row {
+				height: 30px;
+			}
+			.headingLeft {
+				float: left;
+				width: 30%;
+				border-bottom: 1px solid black;
+				text-align: right;
+			}
+			.headingRight {
+				float: right;
+				width: 70%;
+				border-bottom: 1px solid black;
+				display: inline-block;
+			}
+			ul {
+				list-style-type: none;
+				margin: 0;
+			 	padding: 0;
+				overflow: hidden;
+				background-color: #333;
+			}
+
+			li {
+				float: left;
+			}
+
+			li a, .dropbtn {
+				display: inline-block;
+				color: white;
+				text-align: center;
+				padding: 14px 16px;
+ 				text-decoration: none;
+			}
+
+			li a:hover, .dropdown:hover .dropbtn {
+				background-color: green;
+			}
+
+			li.dropdown {
+				display: inline-block;
+			}
+
+			.dropdown-content {
+				display: none;
+				position: absolute;
+				background-color: #f9f9f9;
+				min-width: 160px;
+				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			}
+
+			.dropdown-content a {
+				color: black;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+				text-align: left;
+			}
+
+			.dropdown-content a:hover {background-color: #f1f1f1}
+
+			.show {display:block;}
+			.pricingInputApp{
+				max-width: 500px;
+
+				
+			}
+			.pricingOutputApp{
+				max-width: 500px;
+				
+			}
+			input {
+				    padding: 1px 2px;
+				    border: none;
+				    border-radius: 4px;
+				    background-color: #f1f1f1;
+				} 
+			select {
+				   
+				    padding: 1px 2px;
+				    border: none;
+				    border-radius: 4px;
+				    background-color: #f1f1f1;
+				}
+			#snowflakeContainer {
+			    position: absolute;
+			    left: 0px;
+			    top: 0px;
+			}
+			.snowflake {
+			    padding-left: 15px;
+			    font-family: Cambria, Georgia, serif;
+			    font-size: 14px;
+			    line-height: 24px;
+			    position: fixed;
+			    color: #ffff00;
+			    user-select: none;
+			    z-index: 1000;
+			}
+		</style>
+	</head>
+	<body onload="appDisplay('grassApp')" id="changer">
+		<div id="snowflakeContainer" class="hidden">
+    			<p class="snowflake">&#127820;</p>
+		</div>
+		<ul>
+			<li class="dropdown">
+				<a href="javascript:void(0)" class="dropbtn" onclick="varPricingDisplay()">Variable Pricing</a>
+					<div class="dropdown-content" id="varDropdown">
+						<a onclick="appDisplay('grassApp')">Grass Cuts</a>
+						<a onclick="appDisplay('boardingApp')">Boarding</a>
+						<a onclick="appDisplay('debrisApp')">Debris</a>
+					</div>
+			</li>
+			<li class="dropdown">
+				<a href="javascript:void(0)" class="dropbtn" onclick="fixPricingDisplay()">Fixed Pricing</a>
+					<div class="dropdown-content" id="fixedDropdown">
+						<a onclick="appDisplay('wintApp')">Winterizations</a>
+						<a onclick="appDisplay('secureApp')">Securing</a>
+						<a onclick="appDisplay('cleanApp')">Cleaning</a>
+						<a onclick="appDisplay('utilApp')">Utilities</a>
+						<a onclick="appDisplay('poolApp')">Pools</a>
+						<a onclick="appDisplay('waterApp')">Water Leaks</a>
+					</div>
+			</li>
+			<li class="dropdown">
+				<a href="javascript:void(0)" class="dropbtn" onclick="miscDisplay()">Menu</a>
+					<div class="dropdown-content" id="miscDropdown">
+						<a onclick="appDisplay('optionApp')">Options</a>
+						<a onclick="appDisplay('aboutApp')">About</a>
+					</div>
+			</li>
+			<li>
+				<a href="./../index.html">Back to Liquors</a>
+			</li>
+			<li>
+				<a href="http://philiprydel.com">Back to Portfolio</a>
+			</li>
+		</ul>
+			<form onsubmit="return false" onload="findPrice()" onchange="findPrice()"  oninput="findPrice()">
+					<div>
+						<div class="clearfix">
+							<div class="grassApp" id="grassApp">
+								<div>
+									<div class = "headingLeft" id = "grassHeader">
+										<strong>Grass Cuts</strong>
+									</div>
+									<div class = "headingRight">
+										<strong>:</strong> 
+									</div>
+								</div>
+								<div class="leftPane">
+									<div class ="row">
+										<strong>Select State:</strong>
+									</div>
+									<div class="row">
+										<strong>State Information:</strong>
+									</div>
+									<div class="row">
+										<strong>Lot Size:</strong>
+									</div>
+									<div class="row">
+										<strong>Structure Size:</strong>
+									</div>
+									<div class="row">
+										<strong>Initial/Re-Cut:</strong>
+									</div>
+									<div class="row">
+										<strong>SQFT:</strong>
+									</div>
+									<div class="row">
+										<strong>Acres:</strong>
+									</div>
+									<div class="row">
+										<strong>Possible Square Lot:</strong>
+									</div>
+								</div>
+								<div class = "rightPane">
+									<div class="row" id="stateContainer">
+										<select onchange="tierSelect()" oninput="findPrice()" name="tier" id="tier" class ="grass">
+
+											<option value="AL">Alabama</option>
+
+											<option value="AK">Alaska</option>
+
+											<option value="AZ">Arizona</option>
+
+											<option value="AR">Arkansas</option>
+
+											<option value="CA">California</option>
+
+											<option value="CC">Colorado</option>
+
+											<option value="DD">Connecticut</option>
+
+											<option value="DE">Delaware</option>
+
+											<option selected="selected" value="EE">District of Columbia</option>
+
+											<option value="FL">Florida</option>
+
+											<option value="BB">Georgia</option>
+
+											<option value="GU">Guam</option>
+
+											<option value="HI">Hawaii</option>
+
+											<option value="DD">Idaho</option>
+
+											<option value="AA">Illinois</option>
+
+											<option value="AA">Indiana</option>
+
+											<option value="AA">Iowa</option>
+
+											<option value="AA">Kansas</option>
+
+											<option value="AA">Kentucky</option>
+
+											<option value="BB">Louisiana</option>
+
+											<option value="DD">Maine</option>
+
+											<option value="DD">Maryland</option>
+	
+											<option value="DD">Massachusetts</option>
+
+											<option value="AA">Michigan</option>
+
+											<option value="AA">Minnesota</option>
+
+											<option value="BB">Mississippi</option>
+
+											<option value="AA">Missouri</option>
+
+											<option value="AA">Montana</option>
+
+											<option value="AA">Nebraska</option>
+								
+											<option value="NV">Nevada</option>
+
+											<option value="DD">New Hampshire</option>
+
+											<option value="DD">New Jersey</option>
+
+											<option value="NM">New Mexico</option>
+	
+											<option value="DD">New York</option>
+
+											<option value="AA">North Carolina</option>			
+
+											<option value="AA">North Dakota</option>
+
+											<option value="AA">Ohio</option>
+
+											<option value="AA">Oklahoma</option>
+
+											<option value="DD">Oregon</option>
+
+											<option value="EE">Pennsylvania</option>
+								
+											<option value="PR">Puerto Rico</option>
+
+											<option value="DD">Rhode Island</option>
+
+											<option value="AA">South Dakota</option>
+
+											<option value="BB">South Carolina</option>
+
+											<option value="AA">Tennessee</option>
+
+											<option value="BB">Texas</option>
+
+											<option value="CC">Utah</option>
+
+											<option value="DD">Vermont</option>
+
+											<option value="EE">Virginia</option>
+
+											<option value="VI">Virgin Islands</option>
+
+											<option value="DD">Washington</option>
+
+											<option value="EE">West Virginia</option>
+
+											<option value="AA">Wisconsin</option>
+
+											<option value="CC">Wyoming</option>
+
+										</select>
+									</div>
+									<div class="row" id="stateStringContainer">
+										<strong>
+											<div name="rate" id="rate" style="font-size:12px">
+												Awaiting Input
+											</div>
+										</strong>
+									</div>
+									<div class ="row" id="lotSizeContainer">
+										<input id="lotSize" name="lotSize" value="0" type="number" class ="grass"/>
+										<select name="sqft" id="sqft" class ="grass">
+											<option selected="selected" value="true">SQFT</option>
+											<option value="false">Acres</option>
+										</select>
+									</div>
+									<div id="homeSizeContainer" class ="row">
+										<input id="homeSize" name="homeSize" value="0" type="number" style="width: 75px" class ="grass"/>
+									</div>
+									<div id="recutDropContainer" class = "row">
+										<select name="reCut" id="reCut" class ="grass">
+											<option selected="selected" value="in">Initial</option>
+											<option value="re">Re-Cut</option>
+										</select>
+									</div>
+									<div id="sqftContainer" class ="row">
+										<div name="square" id="square">0
+										</div>
+									</div>
+									<div id="acreContainer" class ="row">
+										<div name="acres" id="acres">0
+										</div>
+									</div>
+									<div class ="row" id="sqrtContainer">
+										<strong>
+											<div name="sRoot" id="sRoot" >Awaiting Input</div>
+										</strong>
+									</div>
+								</div>
+							</div>
+							<div class = "boardingApp" id = "boardingApp">
+								<div>
+									<div class = "headingLeft" id = "boardingHeader">
+										<strong>Boarding</strong>
+									</div>
+									<div class = "headingRight">
+										<strong>:</strong> 
+									</div>
+								</div>
+								<div class="leftPane">
+									<div id="glazingNameContainer" class= "row">
+										<strong>Glazing or Boarding:</strong>
+									</div>
+									<div id="uiNameContainer" class= "row">
+										<strong>Dimensions or U.I. :</strong>
+									</div>
+									<div id="boardNameContainer" class = "row">
+										<strong>Dimensions:</strong>
+									</div>
+									<div id="boardNameContainer2" class = "row">
+										<strong>(L x W in Inches)</strong>
+									</div>
+									<div id="uiInputNameContainer" class= "row">
+										<strong>Input in U.I. :</strong>
+									</div>
+									<div id="unitedInchContainer" class= "row">
+										<strong>Output in U.I. :</strong>
+									</div>
+								</div>
+								<div class="rightPane">
+									<div id="glazingSelectContainer" class = "row"> 
+										<select name="glaze" id="glaze" class ="board">
+											<option selected="selected" value="glz">Re-Glazing</option>
+											<option value="brd">Boarding</option>
+										</select>
+									</div>
+									<div id="uiSelectContainer" class = "row"> 
+										<select name="uiSelect" id="uiSelect" class ="board">
+											<option selected="selected" value="inches">Dimensions</option>
+											<option value="ui">United Inches</option>
+										</select>
+									</div>
+									<div id="boardInputContainer" class = "row">
+										<input id="boardingLength" name="boardingLength" value="0" type="number"style="width: 50px"class ="board"/> X 
+										<input id="boardingWidth" name="boardingWidth" value="0" type="number"style="width: 50px"class ="board"/>
+									</div>
+									<div id="placeholder" class = "row">
+									</div>
+									<div id="uiInputContainer" class="row">
+										<input id="boardingUInput" name="uiInput" value="0" type="number" style = "width:100px"/>
+									</div>
+									<div id="uiOutputContainer" class="row">
+										<strong>
+											<div id="uiOutput">
+												Pending Input
+											</div>
+										</strong>
+									</div>
+								</div>
+							</div>
+							<div class = "debrisApp" id="debrisApp">
+								<div>
+									<div class = "headingLeft" id = "debrisHeader">
+										<strong>Debris</strong>
+									</div>
+									<div class = "headingRight">
+										<strong>:</strong> 
+									</div>
+								</div>
+								<div class="leftPane">
+									<div id = "cydDeciderContainer" class = "row">
+										<strong>Dimensions or Price:</strong>
+									</div>
+									<div id="debrisDimContainer" class = "row">
+										<strong>Dimensions: </strong>
+									</div>
+									<div id="cydDimContainer" class = "row">
+										<strong>(L x W x H in Feet)</strong>
+									</div>
+									<div id="cydNameContainer" class ="row">
+										<strong> Amount in CYDs: </strong>
+									</div>
+									<div id="cydOutputContainer" class ="row">
+										<strong> Output CYDs: </strong>
+									</div>
+								</div>
+								<div class="rightPane">
+									<div id="debrisSelectContainer1" class = "row">
+										<select id="debrisSelect">
+											<option value="finder">CYD Finder</option>
+											<option value="pricer">CYD Pricer</option>
+										</select>
+									</div>
+									<div id ="dimInputContainer1" class="row">
+										<input id="debLength" name="debLength" value="0" type="number"style="width: 50px"class ="debris"/> X 
+										<input id="debWidth" name="debWidth" value="0" type="number"style="width: 50px"class ="debris"/> X 
+										<input id="debHeight" name="debHeight" value="0" type="number"style="width: 50px"class ="debris"/>
+									</div>
+									<div id="dimInputSpacer" class = "row">
+									</div>
+									<div id="cydInputContainer" class ="row">
+										<input id="debCYD" name="debCYD" value="0" type="number"style="width: 75px"class ="debris"/>
+									</div>
+									<div id="cydOutputContainer" class="row">
+										<div id="debOutput" ><strong>Awaiting Input</strong></div>
+									</div>
+								</div>
+							</div>
+							<div class = "wintApp" id="wintApp">
+								<div>
+									<div class = "headingLeft" id = "wintHeader">
+										<strong>Winterizations</strong>
+									</div>
+									<div class = "headingRight">
+										<strong>:</strong> 
+									</div>
+								</div>
+								<div class="leftPane">
+									<div class = "row">
+										<strong>Dry Winterization:</strong>
+									</div>
+									<div class = "row">
+										<strong>Steam Winterization:</strong>
+									</div>
+									<div class = "row">
+										<strong>Radiant Wint. :</strong>
+									</div>
+									<div class ="row">
+										<strong>RPZ Valves:</strong>
+									</div>
+									<div class ="row">
+										<strong>Pool Winterization:</strong>
+									</div>
+									<div class ="row">
+										<strong>Re-Winterization:</strong>
+									</div>
+								</div>
+								<div class="rightPane">
+									<div class = "row">
+										<strong> $100 Per Unit </strong>
+									</div>
+									<div class = "row">
+										<strong> $150 for first unit, 90 Per additional Unit.</strong>
+									</div>
+									<div class = "row">
+										<strong> $250 for first unit, 125 Per additional Unit.</strong>
+									</div>
+									<div class = "row">
+										<strong> $150 per property when needed. </strong>
+									</div>
+									<div class = "row">
+										<strong>$200 every 12 months.</strong>
+									</div>
+									<div class = "row">
+										<strong>$50 Each time.</strong>
+									</div>
+								</div>
+							</div>
+							<div class = "secureApp" id="secureApp">
+								<div>
+									<div class = "headingLeft" id = "debrisHeader">
+										<strong>Securing</strong>
+									</div>
+									<div class = "headingRight">
+										<strong>:</strong> 
+									</div>
+								</div>
+								<div class="leftPane">
+									<div class = "row">
+										<strong>Main Door Lockset:</strong>
+									</div>
+									<div class = "row">
+										<strong>Other Door Lockset:</strong>
+									</div>
+									<div class = "row">
+										<strong>Re-Key:</strong>
+									</div>
+									<div class = "row">
+										<strong>Padlock and Hasp:</strong>
+									</div>
+									<div class = "row">
+										<strong>Lockbox:</strong>
+									</div>
+									<div class = "row">
+										<strong>Window Lock Rep. :</strong>
+									</div>
+									<div class = "row">
+										<strong>Door Slider Lock:</strong>
+									</div>
+								</div>
+								<div class="rightPane">
+									<div class = "row">
+										<strong>$60 Per Set.</strong>
+									</div>
+									<div class = "row">
+										<strong>$20 Each.</strong>
+									</div>
+									<div class = "row">
+										<strong>$10 Per Keyhole.</strong>
+									</div>
+									<div class = "row">
+										<strong>$40 Each.</strong>
+									</div>
+									<div class = "row">
+										<strong>$40 One Time reimbursement.</strong>
+									</div>
+									<div class = "row">
+										<strong>$5 Each, up to 10 per property.</strong>
+									</div>
+									<div class = "row">
+										<strong>$25 Each.</strong>
+									</div>
+								</div>
+							</div>
+							<div class = "cleanApp" id="cleanApp">
+								<div>
+									<div class = "headingLeft" id = "debrisHeader">
+										<strong>Cleaning</strong>
+									</div>
+									<div class = "headingRight">
+										<strong>:</strong> 
+									</div>
+								</div>
+								<div class="leftPane">
+									<div class = "row">
+										<strong>Broom Cleaning:</strong>
+									</div>
+									<div class = "row">
+										<strong>Fridge Cleaning:</strong>
+									</div>
+									<div class = "row">
+										<strong>Toilet Cleaning:</strong>
+									</div>
+									<div class = "row">
+										<strong>Dryer Vent Cover:</strong>
+									</div>
+									<div class = "row">
+										<strong>Dead Animal Rem. :</strong>
+									</div>
+									<div class = "row">
+										<strong>Fencing Repair:</strong>
+									</div>
+									<div class = "row">
+										<strong>Vehicle/Boat Rem. :</strong>
+									</div>
+									<div class = "row">
+										<strong>Gas/Water cap:</strong>
+									</div>
+								</div>
+								<div class="rightPane">
+									<div class = "row">
+										<strong>$50.</strong>
+									</div>
+									<div class = "row">
+										<strong>$50.</strong>
+									</div>
+									<div class = "row">
+										<strong>$50.</strong>
+									</div>
+									<div class = "row">
+										<strong>$20.</strong>
+									</div>
+									<div class = "row">
+										<strong>$50.</strong>
+									</div>
+									<div class = "row">
+										<strong>$300 for all work.</strong>
+									</div>
+									<div class = "row">
+										<strong>$210 per vehicle.</strong>
+									</div>
+									<div class = "row">
+										<strong>$15 per cap, max of $90.</strong>
+									</div>
+								</div>
+							</div>
+							<div class = "utilApp" id="utilApp">
+								<div>
+									<div class = "headingLeft" id = "debrisHeader">
+										<strong>Utility Management</strong>
+									</div>
+									<div class = "headingRight">
+										<strong>:</strong> 
+									</div>
+								</div>
+								<div class="leftPane">
+									<div class = "row">
+										<strong>Initial Pres. test:</strong>
+									</div>
+									<div class = "row">
+										<strong>Wire Capping:</strong>
+									</div>
+									<div class = "row">
+										<strong>Smoke Detectors:</strong>
+									</div>
+									<div class = "row">
+										<strong>CO Detectors:</strong>
+									</div>
+								</div>
+								<div class="rightPane">
+									<div class = "row">
+										<strong>$20.</strong>
+									</div>
+									<div class = "row">
+										<strong>$1 each max of $25.</strong>
+									</div>
+									<div class = "row">
+										<strong>$15.</strong>
+									</div>
+									<div class = "row">
+										<strong>$25.</strong>
+									</div>
+								</div>
+							</div>
+							<div class = "poolApp" id="poolApp">
+								<div>
+									<div class = "headingLeft" id = "debrisHeader">
+										<strong>Pool Securing</strong>
+									</div>
+									<div class = "headingRight">
+										<strong>:</strong> 
+									</div>
+								</div>
+								<div class="leftPane">
+									<div class = "row">
+										<strong>In-Ground Secure:</strong>
+									</div>
+									<div class = "row">
+										<strong>Above-Ground Sec. :</strong>
+									</div>
+									<div class = "row">
+										<strong>Spa and Hot-Tub:</strong>
+									</div>
+									<div class = "row">
+										<strong>Draining:</strong>
+									</div>
+									<div class = "row">
+										<strong>Above-Ground Rem. :</strong>
+									</div>
+									<div class = "row">
+										<strong>Pool Maint. :</strong>
+									</div>
+								</div>
+								<div class="rightPane">
+									<div class = "row">
+										<strong>$1250 for all Work.</strong>
+									</div>
+									<div class = "row">
+										<strong>$500 for all work.</strong>
+									</div>
+									<div class = "row">
+										<strong>$50 for all work.</strong>
+									</div>
+									<div class = "row">
+										<strong>$300 per property.</strong>
+									</div>
+									<div class = "row">
+										<strong>$500 per property.</strong>
+									</div>
+									<div class = "row">
+										<strong>$100 monthly.</strong>
+									</div>
+								</div>
+							</div>
+							<div class = "waterApp" id="waterApp">
+								<div>
+									<div class = "headingLeft" id = "debrisHeader">
+										<strong>Roofing and </strong>
+									</div>
+									<div class = "headingRight">
+										<strong>  &nbsp;Discoloration:</strong> 
+									</div>
+								</div>
+								<div class="leftPane">
+									<div class = "row">
+										<strong>Temp. Roof Repair:</strong>
+									</div>
+									<div class = "row">
+										<strong>Perm. Roof Repair:</strong>
+									</div>
+									<div class = "row">
+										<strong>Basement Pumping:</strong>
+									</div>
+									<div class = "row">
+										<strong>Sump Pump Repair:</strong>
+									</div>
+									<div class = "row">
+										<strong>Sump Pump Rep. :</strong>
+									</div>
+									<div class = "row">
+										<strong>Discoloration Treat. :</strong>
+									</div>
+									<div class = "row">
+										<strong>Dehumidifier Install:</strong>
+									</div>
+								</div>
+								<div class="rightPane">
+									<div class = "row">
+										<strong>$600 per property.</strong>
+									</div>
+									<div class = "row">
+										<strong>$1000 per property.</strong>
+									</div>
+									<div class = "row">
+										<strong>$500 per property.</strong>
+									</div>
+									<div class = "row">
+										<strong>$50.</strong>
+									</div>
+									<div class = "row">
+										<strong>$300 per property.</strong>
+									</div>
+									<div class = "row">
+										<strong>$300 maximum per property.</strong>
+									</div>
+									<div class = "row">
+										<strong>$250 maximum.</strong>
+									</div>
+								</div>
+							</div>
+							<div class = "optionApp" id="optionApp">
+								<div>
+									<div class = "headingLeft" id = "debrisHeader">
+										<strong>Options</strong>
+									</div>
+									<div class = "headingRight">
+										<strong>:</strong> 
+									</div>
+								</div>
+								<div class="leftPane">
+									<div class = "row">
+										<strong>Text Color:</strong>
+									</div>
+									<div class = "row">
+										<strong>Background Color:</strong>
+									</div>
+									<div class = "row">
+										<strong>Animation:</strong>
+									</div>
+								</div>
+								<div class="rightPane">
+									<div class = "row" id="textColorContainer">
+										<select name="txColor" id="txColor">
+											<optgroup label="Standard">
+												<option selected="selected" value="black">Black</option>
+												<option value="white">White</option>
+											<optgroup label="Primary">
+												<option value="blue">Blue</option>
+												<option value="green">Green</option>
+												<option value="red">Red</option>
+											<optgroup label="Secondary">
+												<option value="aqua">Aqua</option>
+												<option value="brown">Brown</option>
+												<option value="orange">Orange</option>
+												<option value="purple">Purple</option>
+												<option value="pink">Pink</option>
+												<option value="yellow">Yellow</option>
+											<optgroup label="Tertiary">
+												<option value="beige">Beige</option>
+												<option value="chartreuse">Chartreuse</option>
+												<option value="coral">Coral</option>
+												<option value="cyan">Cyan</option>
+												<option value="darkgrey">Grey</option>
+												<option value="darksalmon">Salmon</option>
+												<option value="darkolivegreen">Olive</option>
+												<option value="fuchsia">Fuchsia</option>
+												<option value="goldenrod">Goldenrod</option>
+												<option value="indigo">Indigo</option>
+												<option value="lightblue">Light Blue</option>
+												<option value="navy">Navy</option>
+										</select>
+
+									</div>
+									<div class = "row" id="bgColorContainer">
+										<select name="bgColor" id="bgColor">
+											<optgroup label="Standard">
+												<option  value="black">Black</option>
+												<option selected="selected" value="white">White</option>
+											<optgroup label="Primary">
+												<option value="blue">Blue</option>
+												<option value="green">Green</option>
+												<option value="red">Red</option>
+											<optgroup label="Secondary">
+												<option value="aqua">Aqua</option>
+												<option value="brown">Brown</option>
+												<option value="orange">Orange</option>
+												<option value="purple">Purple</option>
+												<option value="pink">Pink</option>
+												<option value="yellow">Yellow</option>
+											<optgroup label="Tertiary">
+												<option value="beige">Beige</option>
+												<option value="chartreuse">Chartreuse</option>
+												<option value="coral">Coral</option>
+												<option value="cyan">Cyan</option>
+												<option value="darkgrey">Grey</option>
+												<option value="darksalmon">Salmon</option>
+												<option value="darkolivegreen">Olive</option>
+												<option value="fuchsia">Fuchsia</option>
+												<option value="goldenrod">Goldenrod</option>
+												<option value="indigo">Indigo</option>
+												<option value="lightblue">Light Blue</option>
+												<option value="navy">Navy</option>
+											<optgroup label="User-Requested">
+												<option value="chang">Chang's Request</option>
+										</select>	
+									</div>
+									<div class="row" id="animationSelectContainer">
+										<select name="sPanda" id="sPanda">
+											<option selected="selected" value="noPanda">None</option>
+											<option value="yesPanda">Panda</option>
+											<option value="kangaroo">Kangaroo</option>
+											</select>
+									</div>
+								</div>
+							</div>
+							<div class = "aboutApp" id="aboutApp">
+								<div>
+									<div class = "headingLeft" id = "debrisHeader">
+										<strong>About</strong>
+									</div>
+									<div class = "headingRight">
+										<strong>:</strong> 
+									</div>
+								</div>
+								<div class="leftPane">
+									<div class = "row">
+										<strong>All Prices</strong>
+									</div>
+									<div class = "row">
+										<strong>Developed by </strong>
+									</div>
+
+
+								</div>
+								<div class="rightPane">
+									<div class = "row">
+										<strong>are based on HUD ML-2016-2</strong>
+									</div>
+									<div class = "row">
+										<strong>Philip Rydel</strong>
+									</div>
+
+								</div>
+							</div>
+							<div class = "pricingInputApp" id="pricingInputApp">
+								<div class="leftPane">
+									<div class = "row">
+										<div id="m1Cell" >
+											<strong>Client Amount:</strong>
+										</div>
+									</div>
+								</div>
+								<div class="rightPane">
+									<div class = "row">
+										<div id="m2Cell" >
+											<input id="ftCalc" name="ftCalc" value="0" type="number"class ="misc" style="width: 75px">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class = "pricingOutputApp" id="pricingOutputApp">
+								<div style = "border-top: 1px solid black;"></div>
+								<div class="leftPane">
+									<div class="row" id="clientPay">
+										<strong>Client Amount:</strong>
+									</div>
+									<div class = "row" id="vendPay">
+										<select name="discount" id="discount">
+											<option selected="selected" value="25">25%</option>
+											<option value="20">20%</option>
+											<option value="15">15%</option>
+											<option value="10">10%</option>
+											<option value="5">5%</option>
+											<option value="0">0%</option>
+										</select>
+									</div>
+									<div class="row">
+										<strong>Discount Amount:</strong>
+									</div>
+								</div>
+								<div class="rightPane">
+									<div class="row">
+										<div name="client" id="client">0</div>
+									</div>
+									<div class="row">
+										 &nbsp;
+									</div>
+									<div class="row">
+										<div name="vendor" id="vendor">0</div>
+									</div>
+								</div>
+							</div>
+							<div class = "animationContainer" id="animationContainer">
+									<div id = "pic2" class = hidden>
+    										
+									</div>
+									<div id = "pic3" class = hidden>
+										
+										<hr>			
+									</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+				</form>
+
+				<script>
+				function miscApp(){
+					var ftCalc=parseFloat(document.getElementById("ftCalc").value)
+			
+
+
+					return ftCalc;
+					}
+			
+
+				function boardingApp(){
+					document.getElementById("pricingInputApp").style.visibility = "hidden";
+					var glaze = document.getElementById("glaze").value;
+					var boardingLength = parseFloat(document.getElementById("boardingLength").value);
+					var boardingWidth = parseFloat(document.getElementById("boardingWidth").value);
+					var uiValue = parseFloat(document.getElementById("boardingUInput").value);
+					var unitedInch=0;
+					if(document.getElementById("uiSelect").value == "inches"){
+						document.getElementById("boardNameContainer").style.visibility = "visible";
+						document.getElementById("boardNameContainer2").style.visibility = "visible";
+						document.getElementById("uiInputNameContainer").style.visibility = "hidden";
+						document.getElementById("boardInputContainer").style.visibility = "visible";
+						document.getElementById("uiInputContainer").style.visibility = "hidden";
+						unitedInch=boardingLength + boardingWidth;
+					}
+					else if(document.getElementById("uiSelect").value == "ui"){
+						document.getElementById("boardNameContainer").style.visibility = "hidden";
+						document.getElementById("boardNameContainer2").style.visibility = "hidden";
+						document.getElementById("uiInputNameContainer").style.visibility = "visible";
+						document.getElementById("boardInputContainer").style.visibility = "hidden";
+						document.getElementById("uiInputContainer").style.visibility = "visible";
+						unitedInch=uiValue;
+					}
+
+					document.getElementById("uiOutput").innerHTML=unitedInch;
+					if(glaze == "glz"){
+
+						return 1.5*unitedInch;
+					}
+					else if(glaze == "brd"){
+
+						return .9*unitedInch;
+					}
+				}
+				function debrisApp(){
+
+					var cyd=parseFloat(document.getElementById("debCYD").value);
+					var debL=parseFloat(document.getElementById("debLength").value);
+					var debW=parseFloat(document.getElementById("debWidth").value);
+					var debH=parseFloat(document.getElementById("debHeight").value);
+					var debFix=0;
+					var debPrice = 0;
+					var debOutput= document.getElementById("debOutput");
+					if (document.getElementById("debrisSelect").value == "finder"){
+						document.getElementById("debrisDimContainer").style.visibility = "visible";
+						document.getElementById("dimInputContainer1").style.visibility = "visible";
+						document.getElementById("cydDimContainer").style.visibility = "visible";
+						document.getElementById("cydNameContainer").style.visibility = "hidden";
+						document.getElementById("cydInputContainer").style.visibility = "hidden";
+						debFix=debL*debW*debH;
+						debPrice = debFix/27;
+						debOutput.innerHTML=debPrice.toFixed(2);
+						debPrice=Math.floor(debPrice);
+						return debPrice * 50;
+						}
+					else if (document.getElementById("debrisSelect").value == "pricer"){
+						document.getElementById("debrisDimContainer").style.visibility = "hidden";
+						document.getElementById("dimInputContainer1").style.visibility = "hidden";
+						document.getElementById("cydDimContainer").style.visibility = "hidden";
+						document.getElementById("cydNameContainer").style.visibility = "visible";
+						document.getElementById("cydInputContainer").style.visibility = "visible";
+						debOutput.innerHTML=cyd.toFixed(2);
+						return cyd * 50;
+						}
+					}
+					function tierSelect(){
+					var basePrice =0;
+					var stateType=0;
+					var tier = document.getElementById("tier").value;
+			
+					if(tier == "AL"){
+						basePrice = 70;
+						stateType=3;}
+
+					else if(tier == "AK"){
+						basePrice = 100;
+						stateType=6;}
+			
+					else if(tier == "AZ"){
+						basePrice = 75;
+						stateType=2;}
+
+					else if(tier == "AR"){
+						basePrice = 70;
+						stateType=5;}
+
+					//cali
+					else if(tier == "CA"){
+						basePrice = 100;
+						stateType=1;}
+
+					//colorado, utah, wyoming
+					else if(tier == "CC"){
+						basePrice = 85;
+						stateType=4;}
+
+					//New England
+					else if(tier == "DD"){
+						basePrice = 100;
+						stateType=5;}
+
+					else if(tier == "DE"){
+						basePrice = 66;
+						stateType=5;}
+		
+					else if(tier == "FL"){
+						basePrice = 85;
+						stateType=1;}
+
+					//Southeast
+					else if(tier == "BB"){
+						basePrice = 85;
+						stateType=3;}
+
+					else if(tier == "GU"){
+						basePrice = 110;
+						stateType=1;}
+
+					else if(tier == "HI"){
+						basePrice = 110;
+						stateType=1;}
+
+					//Midwest
+					else if(tier == "AA"){
+						basePrice = 85;
+						stateType=5;}
+
+					else if(tier == "NM"){
+						basePrice = 85;
+						stateType=2;}
+
+					else if(tier == "NV"){
+						basePrice = 90;
+						stateType=2;}
+
+					//Virginias
+					else if(tier == "EE"){
+						basePrice = 95;
+						stateType=5;}
+		
+					else if(tier == "PR"){
+						basePrice = 110;
+						stateType=1;}
+			
+					else if(tier == "VI"){
+						basePrice = 85;
+						stateType=1;}
+
+					else {basePrice = 0;}
+			
+					//0=undeclared, 1=year round double, 2=year round single
+					//3=march double, 4=april single, 5=april double, 6=AK
+
+					var rate=document.getElementById("rate");
+					rate.innerHTML=stateString(stateType);
+					return basePrice;
+					}
+				function bracketFinder(bracketNumber, finalPrice, basePrice){
+					if (bracketNumber == 1){
+						if(basePrice == 66){
+							finalPrice =95;}
+						else{finalPrice=basePrice;}	
+					}
+					else if(bracketNumber == 2){
+						if(basePrice == 66){
+							finalPrice = 125;}
+						else{finalPrice=basePrice+20;}
+					}
+					else if (bracketNumber > 2){
+						if(basePrice == 66){
+							var highPrice=bracketNumber-2;
+							highPrice=highPrice*25;
+							finalPrice = 125;
+							finalPrice = finalPrice+highPrice;}
+						else{
+					
+							var highPrice=bracketNumber-2;
+							highPrice=highPrice*25;
+							finalPrice = basePrice+20;
+							finalPrice = finalPrice+highPrice;}
+						}
+					return finalPrice;
+					}
+		
+				function grassApp(){
+					document.getElementById("pricingInputApp").style.visibility = "hidden";	
+					var finalPrice = 0;
+					var lotSize = parseFloat(document.getElementById("lotSize").value);
+					var homeSize = parseFloat(document.getElementById("homeSize").value);
+					var reCut = document.getElementById("reCut").value;
+					var sqft = document.getElementById("sqft").value;
+					var acres=document.getElementById("acres");
+					var sRoot=0;
+					if(sqft=="false"){lotSize=lotSize*43560;}
+					if(isNaN(lotSize) ==true){lotSize=0;}
+					if(isNaN(homeSize) ==true){homeSize=0;}
+
+					var cuttable=lotSize-homeSize;
+					var divByTen=cuttable/10000;
+					var bracketNumber=Math.ceil(divByTen);
+
+					var basePrice = tierSelect();
+					finalPrice = bracketFinder(bracketNumber, finalPrice, basePrice);
+			
+					sRoot=Math.sqrt(cuttable);
+			
+					document.getElementById("sRoot").innerHTML=sRoot.toFixed(2);
+
+					var limiter=cuttable/43560;
+			
+			
+					acres.innerHTML=limiter.toFixed(2);
+
+					var square=document.getElementById("square");
+					square.innerHTML=cuttable;
+					if (finalPrice>0){
+					if(reCut == "in"){finalPrice=finalPrice;
+					}
+					else if(reCut == "re"){finalPrice=finalPrice-5;}
+					else{finalPrice=66;}
+					}
+					else {finalPrice=0;}
+					return finalPrice;
+					}
+			
+				function stateString(stateType){
+			
+					if(stateType==1){return "Twice a Month Year-Round State.";}
+					else if(stateType==1){return "Twice a Month <br>Year-Round State.";}
+					else if(stateType==2){return "Once a Month <br>Year-Round State.";}
+					else if(stateType==3){return "Twice a Month <br>March 1st- November 30th State.";}
+					else if(stateType==4){return "Once a Month <br>April 1st - October 31st State.";}
+					else if(stateType==5){return "Twice a Month <br>April 1st - October 31st State.";}
+					else if(stateType==6){return "Twice a Month <br>June 1st - September 30th State.";}
+					else{return "You Broke It";}	
+					}
+					/* When the user clicks on the button, 
+					toggle between hiding and showing the dropdown content */
+					function varPricingDisplay() {
+						document.getElementById("varDropdown").classList.toggle("show");
+						}
+					function fixPricingDisplay() {
+						document.getElementById("fixedDropdown").classList.toggle("show");
+						}
+					function miscDisplay() {
+						document.getElementById("miscDropdown").classList.toggle("show");
+						}
+					// Close the dropdown if the user clicks outside of it
+					window.onclick = function(e) {
+						if (!Element.prototype.matches) {
+							Element.prototype.matches = 
+							Element.prototype.matchesSelector || 
+							Element.prototype.mozMatchesSelector ||
+							Element.prototype.msMatchesSelector || 
+							Element.prototype.oMatchesSelector || 
+							Element.prototype.webkitMatchesSelector ||
+							function(s) {
+								var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+								i = matches.length;
+								while (--i >= 0 && matches.item(i) !== this) {}
+								return i > -1;            
+							};
+						}
+						if (!e.target.matches('.dropbtn')) {
+							var dropdowns = document.getElementsByClassName("dropdown-content");
+							for (var d = 0; d < dropdowns.length; d++) {
+								var openDropdown = dropdowns[d];
+								if (openDropdown.classList.contains('show')) {
+									if (navigator.appName == 'Microsoft Internet Explorer')
+  									{
+										openDropdown.style.display = "none";
+									}
+									else
+									{
+										openDropdown.classList.remove('show');
+									 }
+								}
+
+							}
+						
+						}
+					}
+					function screenClear(){
+						document.getElementById("grassApp").style.display = "none";
+						document.getElementById("boardingApp").style.display = "none";
+						document.getElementById("debrisApp").style.display = "none";
+						document.getElementById("wintApp").style.display = "none";
+						document.getElementById("secureApp").style.display = "none";
+						document.getElementById("cleanApp").style.display = "none";
+						document.getElementById("utilApp").style.display = "none";
+						document.getElementById("poolApp").style.display = "none";
+						document.getElementById("waterApp").style.display = "none";
+						document.getElementById("aboutApp").style.display = "none";
+						document.getElementById("optionApp").style.display = "none";
+						}
+					function reDrawApp(appName){
+						screenClear();
+						document.getElementById(appName).style.maxWidth = "500px";
+						document.getElementById(appName).style.display = "block";
+						findPrice();
+						}
+					function appDisplay(appName){
+						reDrawApp(appName);
+					}
+					function programSelect(){
+						var finalPrice = 0;
+							if(document.getElementById("grassApp").style.display == "block"){
+								finalPrice=grassApp();
+							}
+							else if(document.getElementById("boardingApp").style.display == "block"){
+								finalPrice=boardingApp();
+							}
+							else if(document.getElementById("debrisApp").style.display == "block"){
+								finalPrice=debrisApp();
+							}
+							else if(document.getElementById("aboutApp").style.display == "block"){
+								document.getElementById("pricingInputApp").style.visibility = "hidden";
+								finalPrice=0;
+							}
+							else if(document.getElementById("optionApp").style.display == "block"){
+								displayMode();
+								finalPrice=0;
+							}
+							else{
+								document.getElementById("pricingInputApp").style.visibility = "visible";
+								finalPrice=miscApp();
+							}
+							return finalPrice;
+
+						}
+
+		function displayMode(){
+			var bgColor = document.getElementById("bgColor").value;
+			var txColor = document.getElementById("txColor").value;
+			document.getElementById("pricingInputApp").style.visibility = "hidden";
+			if("yesPanda" == document.getElementById("sPanda").value){
+				document.getElementById("pic2").style.visibility = "visible";
+				document.getElementById("pic2").style.display = "inline";
+				document.getElementById("pic3").style.visibility = "hidden";
+				document.getElementById("pic3").style.display = "none";}
+
+			if("noPanda" == document.getElementById("sPanda").value){
+				document.getElementById("pic2").style.visibility = "hidden";
+				document.getElementById("pic2").style.display = "none";
+				document.getElementById("pic3").style.visibility = "hidden";
+				document.getElementById("pic3").style.display = "none";}
+
+			if("kangaroo" == document.getElementById("sPanda").value){
+				document.getElementById("pic2").style.visibility = "hidden";
+				document.getElementById("pic2").style.display = "none";
+				document.getElementById("pic3").style.visibility = "visible";
+				document.getElementById("pic3").style.display = "inline";}
+			if(bgColor=="chang"){
+				document.body.style.backgroundSize = "cover";
+				document.getElementById("changer").style.color = txColor;
+				document.body.style.backgroundImage = "url('http://science-all.com/images/wallpapers/chinese-wallpaper/chinese-wallpaper-5.jpg')";}
+			else{
+				document.body.style.backgroundImage = "none";
+				document.getElementById("changer").style.color = txColor;
+				document.getElementById("changer").style.backgroundColor=bgColor;
+				document.body.style.backgroundColor=bgColor;}
+			
+		}
+					function findPrice(){
+						var price = 0;
+						price = programSelect();
+						if(isNaN(price) ==true){price=0;}
+
+						var client=document.getElementById("client");
+						client.innerHTML= price.toFixed(2);
+			
+						var discount = parseFloat(document.getElementById("discount").value);
+		
+						discount=discount/100;
+
+						var vend=document.getElementById("vendor");
+
+						var fixer = price - price * discount;
+
+						vend.innerHTML= fixer.toFixed(2);
+			
+	
+						}
+				</script>
+	
+</body></html>
